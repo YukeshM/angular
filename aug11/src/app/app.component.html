@@ -1,0 +1,12 @@
+<app-input-details (event)="onPush($event)"> </app-input-details>
+
+<app-display-details>
+  <ul
+    class="list-group"
+    *ngFor="let item of studentDetails; let i = index"
+    [details]="item"
+    [id]="i"
+    (statusChanged)="onChange($event)"
+  >
+  </ul>
+</app-display-details>

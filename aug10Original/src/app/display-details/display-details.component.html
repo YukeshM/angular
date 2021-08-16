@@ -1,0 +1,14 @@
+<app-add-details (eventCreated)="onPush($event)"></app-add-details>
+
+<ul class="list-group">
+  <div class="container">
+    <h2>Todo list</h2>
+  </div>
+  <li *ngFor="let task of tasks; let index = index" (dblclick)="onDone(index)">
+    {{ task }}
+
+    <span class="hover-cursor text-danger pull-right" (click)="onRemove(index)">
+      <i>X</i>
+    </span>
+  </li>
+</ul>
