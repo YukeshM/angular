@@ -1,0 +1,67 @@
+<form>
+  <div class="mb-3">
+    <label class="form-label">ISBN</label>
+    <input
+      type="text"
+      class="form-control"
+      name="isbn"
+      [(ngModel)]="isb"
+      #isbn
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      [(ngModel)]="titl"
+      #title
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      name="description"
+      [(ngModel)]="descriptio"
+      #description
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Author</label>
+    <input
+      type="text"
+      class="form-control"
+      name="author"
+      [(ngModel)]="autho"
+      #author
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input
+      type="text"
+      class="form-control"
+      name="price"
+      [(ngModel)]="pric"
+      #price
+    />
+  </div>
+
+  <button
+    class="btn btn-primary"
+    (click)="
+      onSave(
+        isbn.value,
+        title.value,
+        description.value,
+        author.value,
+        price.value
+      )
+    "
+  >
+    Add Book
+  </button>
+</form>

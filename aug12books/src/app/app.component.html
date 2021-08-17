@@ -1,0 +1,4 @@
+<h1>BOOKS</h1>
+<app-add-book (addBookEvent)="onAddBook($event)"></app-add-book>
+
+<app-display-book [Books]="bookList" (updateEvent)="onUpdateBookWithOldList($event)"></app-display-book>
