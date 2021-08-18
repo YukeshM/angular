@@ -7,7 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./input-details.component.css']
 })
 export class InputDetailsComponent implements OnInit {
-
+  
+  
   fName='';
   lName='';
   mobile=0;
@@ -26,11 +27,11 @@ export class InputDetailsComponent implements OnInit {
   }
 
 
-  registrationForm:FormGroup | undefined;
+  profileForm:FormGroup;
 
   ngOnInit(): void 
   {
-    this.registrationForm = new FormGroup({
+    this.profileForm=new FormGroup({
       // 'profileData':new FormGroup({
       'firstName':new FormControl(null,Validators.required),
       'lastName':new FormControl(null,Validators.required),
@@ -77,7 +78,8 @@ export class InputDetailsComponent implements OnInit {
     this.countryName='';
     this.cityName='';
     this.fName='';
-    this.Profile.emit(this.registrationForm.value)
-    console.log(this.registrationForm.value)
+    this.Profile.emit(this.profileForm.value)
+    console.log(this.profileForm.value)
   }
+
 }

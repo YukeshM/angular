@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aug17ReactiveForm": {
+    "aug17reactiveForm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/aug17ReactiveForm",
+            "outputPath": "dist/aug17reactiveForm",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "aug17ReactiveForm:build:production"
+              "browserTarget": "aug17reactiveForm:build:production"
             },
             "development": {
-              "browserTarget": "aug17ReactiveForm:build:development"
+              "browserTarget": "aug17reactiveForm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aug17ReactiveForm:build"
+            "browserTarget": "aug17reactiveForm:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "aug17ReactiveForm"
+  "defaultProject": "aug17reactiveForm"
 }

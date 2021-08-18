@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aug17ReactiveForm';
+  title = 'aug17reactiveForm';
 
-  usersList:any=[];
+  profileList:any=[];
 
   onAdd(data:any)
   {
-    this.usersList.push({
-      type:'user',
+    this.profileList.push({
+      type:'profile',
       firstName:data.firstName,
       lastName:data.lastName,
       phone:data.phoneNumber,
@@ -23,7 +23,7 @@ export class AppComponent {
       City:data.City
     })
 
-    console.log(this.usersList.Address)
+    console.log(this.profileList.Address)
 
   }
 }
