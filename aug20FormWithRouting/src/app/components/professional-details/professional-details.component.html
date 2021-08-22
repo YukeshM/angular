@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <form [formGroup]="professionalDetailsForm" (ngSubmit)="onSave()">
+    <ng-container formArrayName="details">
+      <ng-container *ngFor="let detailsForm of details.controls">
+        <div >
+          <div class="form-group">
+            <label for="">Company</label>
+            <input
+              [class.is-invalid]="
+                controls.company.invalid && controls.company.touched
+              "
+              formControlName="company"
+              type="text"
+              class="form-control"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="
+                controls.company.valid || controls.company.untouched
+              "
+              >Enter company</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="">Designation</label>
+            <input
+              [class.is-invalid]="
+                controls.designation.invalid && controls.designation.touched
+              "
+              formControlName="designation"
+              type="text"
+              class="form-control"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="
+                controls.designation.valid || controls.designation.untouched
+              "
+              >Enter designation</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="">Start Date</label>
+            <input
+              [class.is-invalid]="
+                controls.startDate.invalid && controls.startDate.touched
+              "
+              formControlName="startDate"
+              type="date"
+              class="form-control"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="
+                controls.startDate.valid || controls.startDate.untouched
+              "
+              >Enter start date</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="">End Date</label>
+            <input
+              [class.is-invalid]="
+                controls.endDate.invalid && controls.endDate.touched
+              "
+              formControlName="endDate"
+              type="date"
+              class="form-control"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="
+                controls.endDate.valid || controls.endDate.untouched
+              "
+              >Enter end date</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="">Skills</label>
+            <input
+              [class.is-invalid]="
+                controls.skills.invalid && controls.skills.touched
+              "
+              formControlName="skills"
+              type="text"
+              class="form-control"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="
+                controls.skills.valid || controls.skills.untouched
+              "
+              >Enter skills</small
+            >
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <div>
+      <button
+        class="btn btn-info"
+        type="button"
+        (click)="onAddProfessionalDetails()"
+      >
+        Add profession details
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      [disabled]="professionalDetailsForm.invalid"
+      (click)="onRouter()"
+    >
+      Next
+    </button>
+  </form>
+</div>

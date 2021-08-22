@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <form [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="">First Name</label>
+      <input
+        [class.is-invalid]="
+          personalDetailsForm.controls.firstName.invalid &&
+          personalDetailsForm.controls.firstName.touched
+        "
+        formControlName="firstName"
+        type="text"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="
+          personalDetailsForm.controls.firstName.valid ||
+          personalDetailsForm.controls.firstName.untouched
+        "
+        >Enter First Name</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Last Name</label>
+      <input
+        [class.is-invalid]="
+          controls.lastName.invalid && controls.lastName.touched
+        "
+        formControlName="lastName"
+        type="text"
+        class="form-control"
+      />
+      <!-- using structural directives -->
+
+      <div *ngIf="controls.lastName.invalid && controls.lastName.touched">
+        <small *ngIf="controls.lastName.errors?.required" class="text-danger"
+          >last Name is required</small
+        >
+        <small *ngIf="controls.lastName.errors?.minlength" class="text-danger"
+          >last Name should be more than 3 characters</small
+        >
+      </div>
+
+      <!-- <small
+        class="text-danger"
+        [class.d-none]="
+          personalDetailsForm.controls.lastName.valid ||
+          personalDetailsForm.controls.lastName.untouched
+        "
+        >Enter Last Name</small
+      > -->
+    </div>
+
+    <div class="form-group">
+      <label for="">Phone Number</label>
+      <input
+        [class.is-invalid]="
+          controls.phoneNumber.invalid && controls.phoneNumber.touched
+        "
+        formControlName="phoneNumber"
+        type="tel"
+        class="form-control"
+      />
+      <div *ngIf="controls.phoneNumber.invalid && controls.phoneNumber.touched">
+        <small *ngIf="controls.phoneNumber.errors?.required" class="text-danger"
+          >phone number is required</small
+        >
+        <small
+          *ngIf="controls.phoneNumber.errors?.minlength"
+          class="text-danger"
+          >phone number should be 10 numbers</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Address</label>
+      <input
+        [class.is-invalid]="
+          controls.address.invalid && controls.address.touched
+        "
+        formControlName="address"
+        type="text"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="controls.address.valid || controls.address.untouched"
+        >Enter address</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">Country</label>
+      <input
+        [class.is-invalid]="
+          controls.country.invalid && controls.country.touched
+        "
+        formControlName="country"
+        type="text"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="controls.country.valid || controls.country.untouched"
+        >Enter country</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="">State</label>
+      <input
+        [class.is-invalid]="controls.state.invalid && controls.state.touched"
+        formControlName="state"
+        type="text"
+        class="form-control"
+      />
+      <small
+        class="text-danger"
+        [class.d-none]="controls.state.valid || controls.state.untouched"
+        >Enter state</small
+      >
+    </div>
+
+    <button
+      type="button"
+      [disabled]="personalDetailsForm.invalid"
+      class="btn btn-primary" 
+      (click)="onRouter()"
+    >
+      Next
+    </button>
+  </form>
+</div>
